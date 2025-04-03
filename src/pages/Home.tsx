@@ -66,20 +66,20 @@ const Home = () => {
         } transform`}
       >
         <div className="text-center mt-16 font-oswald">
-          <h2 className="text-3xl font-bold text-gray-800">
+          <h2 className="text-3xl font-bold text-gray-500">
             Welcome to Esteem Salon
           </h2>
-          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+          <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
             At Esteem, every haircut is a crafted experience, designed with
             precision, care, and a deep understanding that no two heads of hair
             are the same.
           </p>
-          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+          <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
             From the moment you walk in, you’ll feel it: the warmth, the
             attention to detail, the hospitality that turns a routine haircut
             into a ritual of self-care.
           </p>
-          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+          <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
             At Esteem, we take pride in what we do, approaching every cut with
             intention and care. Because when you look good, you feel good—and
             that’s what true esteem is all about.
