@@ -23,7 +23,7 @@ const Home = () => {
         if (entry.isIntersecting) {
           setVisibleSections((prev) => ({
             ...prev,
-            [entry.target.dataset.section]: true,
+            [(entry.target as HTMLElement).dataset.section as string]: true,
           }));
         }
       });
