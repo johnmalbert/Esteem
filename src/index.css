@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -69,10 +75,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap');
-
-:root {
-  font-family: 'Oswald', sans-serif;
 }
