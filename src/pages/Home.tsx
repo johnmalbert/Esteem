@@ -36,52 +36,61 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="text-center mt-16 font-roboto">
-      {/* LOGO */}
+    <div className="text-center">
+      {/* Hero Section with Background Image */}
       <div
-        ref={logoRef}
-        data-section="logo"
-        className={`transition-all duration-1000 delay-100 ${
-          visibleSections.logo ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        } transform`}
+        className="relative bg-cover bg-center min-h-screen flex flex-col justify-center items-center px-6"
+        style={{ backgroundImage: "url('/images/background.jpg')" }}
       >
-        <img
-          src="/images/ESTEEM.png"
-          alt="Esteem Logo"
-          className="mx-auto w-40 h-40 mb-6 drop-shadow-md"
-        />
-      </div>
+      <div className="absolute inset-0 bg-black opacity-50"></div> {/* Background overlay */}
+        <div className="text-center mt-16 font-roboto">
+          {/* LOGO */}
+          <div
+            ref={logoRef}
+            data-section="logo"
+            className={`transition-all duration-1000 delay-100 ${
+              visibleSections.logo ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            } transform`}
+          >
+            <img
+              src="/images/ESTEEM.png"
+              alt="Esteem Logo"
+              className="mx-auto w-40 h-40 mb-6 drop-shadow-md"
+            />
+          </div>
 
-      {/* TEXT SECTION */}
-      <div
-        ref={textRef}
-        data-section="text"
-        className={`transition-all duration-1000 delay-300 ${
-          visibleSections.text ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        } transform`}
-      >
-        <div className="text-center mt-10 px-4 max-w-2xl mx-auto text-gray-700 leading-relaxed">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Welcome to Esteem Salon</h2>
-          <p>
-            At Esteem, every haircut is a crafted experience, designed with precision,
-            care, and a deep understanding that no two heads of hair are the same.
-          </p>
-          <p className="mt-4">
-            From the moment you walk in, you’ll feel it: the warmth, the attention
-            to detail, the hospitality that turns a routine haircut into a ritual of self-care.
-          </p>
-          <p className="mt-4">
-            At Esteem, we take pride in what we do, approaching every cut with intention
-            and care. Because when you look good, you feel good—and that’s what true esteem is all about.
-          </p>
+          {/* TEXT SECTION */}
+          <div
+            ref={textRef}
+            data-section="text"
+            className={`transition-all duration-1000 delay-300 ${
+              visibleSections.text ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            } transform`}
+          >
+            <div className="text-center mt-10 px-4 max-w-2xl mx-auto text-white-700 leading-relaxed">
+              <h2 className="text-3xl font-bold text-white-800 mb-4">Welcome to Esteem</h2>
+              <p>
+                At Esteem, every haircut is a crafted experience, designed with precision,
+                care, and a deep understanding that no two heads of hair are the same.
+              </p>
+              <p className="mt-4">
+                From the moment you walk in, you’ll feel it: the warmth, the attention
+                to detail, the hospitality that turns a routine haircut into a ritual of self-care.
+              </p>
+              <p className="mt-4">
+                At Esteem, we take pride in what we do, approaching every cut with intention
+                and care. Because when you look good, you feel good—and that’s what true esteem is all about.
+              </p>
 
-          <div className="mt-6 space-x-4">
-            <a
-              href="https://booking.com"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md shadow-md transition"
-            >
-              Book Now
-            </a>
+              <div className="mt-6 space-x-4">
+                <a
+                  href="https://booking.com"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md shadow-md transition"
+                >
+                  Book Now
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -116,7 +125,7 @@ const Home = () => {
         {showPricing && (
           <div className="overflow-x-auto px-4">
             <table className="min-w-full text-sm text-left border border-gray-300 shadow-lg rounded-lg overflow-hidden bg-white">
-              <thead className="bg-blue-600 text-white">
+              <thead className="bg-green-600 text-white">
                 <tr>
                   <th className="px-6 py-3">Service</th>
                   <th className="px-6 py-3">Duration</th>
@@ -132,7 +141,7 @@ const Home = () => {
                 ].map(([service, duration, price], i) => (
                   <tr
                     key={i}
-                    className={`hover:bg-blue-50 transition ${i % 2 === 0 ? "bg-gray-50" : "bg-white"}`}
+                    className={`hover:bg-green-50 transition ${i % 2 === 0 ? "bg-gray-50" : "bg-white"}`}
                   >
                     <td className="px-6 py-3 font-medium">{service}</td>
                     <td className="px-6 py-3">{duration}</td>
