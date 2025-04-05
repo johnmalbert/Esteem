@@ -2,157 +2,121 @@ import { useState, useEffect, useRef } from "react";
 import Gallery from "../components/Gallery";
 
 const Home = () => {
-  const [visibleSections, setVisibleSections] = useState({
-    logo: false,
-    text: false,
+  const [visible, setVisible] = useState({
+    intro: false,
     gallery: false,
     pricing: false,
   });
-
-  const [showPricing, setShowPricing] = useState(false);
-
-  const logoRef = useRef(null);
-  const textRef = useRef(null);
+  const introRef = useRef(null);
   const galleryRef = useRef(null);
   const pricingRef = useRef(null);
 
   useEffect(() => {
-    const observerOptions = { threshold: 0.2 };
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const section = (entry.target as HTMLElement).dataset.section as keyof typeof visibleSections;
-          setVisibleSections((prev) => ({ ...prev, [section]: true }));
-        }
-      });
-    }, observerOptions);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const section = entry.target.dataset.section;
+            setVisible((prev) => ({ ...prev, [section]: true }));
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
 
-    if (logoRef.current) observer.observe(logoRef.current);
-    if (textRef.current) observer.observe(textRef.current);
-    if (galleryRef.current) observer.observe(galleryRef.current);
-    if (pricingRef.current) observer.observe(pricingRef.current);
+    [introRef, galleryRef, pricingRef].forEach((ref) => {
+      if (ref.current) observer.observe(ref.current);
+    });
 
     return () => observer.disconnect();
   }, []);
 
+  const pricingItems = [
+    { title: "Haircut", duration: "30 mins", price: "$65" },
+    { title: "Hair Coloring", duration: "1 hour", price: "$60" },
+    { title: "Beard Trim", duration: "15 mins", price: "$25" },
+    { title: "Full Styling", duration: "1.5 hours", price: "$100" },
+  ];
+
   return (
-    <div className="text-center">
-      {/* Hero Section with Background Image */}
-      <div
-        className="relative bg-cover bg-center min-h-screen flex flex-col justify-center items-center px-6"
-        style={{ backgroundImage: "url('/images/background.jpg')" }}
+    <div className="font-sans text-gray-900">
+      {/* HERO */}
+      <section className="relative h-screen bg-white flex flex-col items-center justify-center text-center px-6">
+        <img
+          src="/images/ESTEEM.png"
+          alt="Esteem Logo"
+          className="w-28 sm:w-40 mb-4 animate-fade-in drop-shadow-md"
+        />
+        <h1 className="text-4xl sm:text-5xl font-serif mb-6 max-w-xl leading-tight">
+          Precision. Ritual. Esteem.
+        </h1>
+        <a
+          href="https://booking.com"
+          className="inline-block mt-4 bg-black text-white px-6 py-3 rounded-full shadow-lg hover:bg-gray-800 transition"
+        >
+          Book Your Experience
+        </a>
+      </section>
+
+      {/* INTRO */}
+      <section
+        ref={introRef}
+        data-section="intro"
+        className={`transition-opacity duration-1000 ${
+          visible.intro ? "opacity-100" : "opacity-0"
+        } bg-gray-50 py-20 px-6`}
       >
-      <div className="absolute inset-0 bg-black opacity-50"></div> {/* Background overlay */}
-        <div className="text-center mt-16 font-roboto">
-          {/* LOGO */}
-          <div
-            ref={logoRef}
-            data-section="logo"
-            className={`transition-all duration-1000 delay-100 ${
-              visibleSections.logo ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            } transform`}
-          >
-            <img
-              src="/images/ESTEEM.png"
-              alt="Esteem Logo"
-              className="mx-auto w-40 h-40 mb-6 drop-shadow-md"
-            />
-          </div>
-
-          {/* TEXT SECTION */}
-          <div
-            ref={textRef}
-            data-section="text"
-            className={`transition-all duration-1000 delay-300 ${
-              visibleSections.text ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            } transform`}
-          >
-            <div className="text-center mt-10 px-4 max-w-2xl mx-auto text-white-700 leading-relaxed">
-              <h2 className="text-3xl font-bold text-white-800 mb-4">Welcome to Esteem</h2>
-              <p>
-                At Esteem, every haircut is a crafted experience, designed with precision,
-                care, and a deep understanding that no two heads of hair are the same.
-              </p>
-              <p className="mt-4">
-                From the moment you walk in, you’ll feel it: the warmth, the attention
-                to detail, the hospitality that turns a routine haircut into a ritual of self-care.
-              </p>
-              <p className="mt-4">
-                At Esteem, we take pride in what we do, approaching every cut with intention
-                and care. Because when you look good, you feel good—and that’s what true esteem is all about.
-              </p>
-
-              <div className="mt-6 space-x-4">
-                <a
-                  href="https://booking.com"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md shadow-md transition"
-                >
-                  Book Now
-                </a>
-              </div>
-            </div>
-          </div>
+        <div className="max-w-3xl mx-auto text-center space-y-6 text-lg leading-relaxed">
+          <p>
+            At <strong>Esteem</strong>, every haircut is a crafted experience, designed with
+            precision and care — because no two heads of hair are the same.
+          </p>
+          <p>
+            The moment you walk in, you’ll feel the warmth, the attention to detail,
+            the hospitality that transforms a routine visit into self-care.
+          </p>
+          <p>
+            We cut with intention. With passion. Because when you look good, you feel good —
+            and that’s what Esteem is all about.
+          </p>
         </div>
-      </div>
+      </section>
 
-      {/* GALLERY SECTION */}
-      <div
+      {/* GALLERY */}
+      <section
         ref={galleryRef}
         data-section="gallery"
-        className={`transition-all duration-1000 delay-500 ${
-          visibleSections.gallery ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        } transform mt-20`}
+        className={`transition-transform duration-1000 ${
+          visible.gallery ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+        } transform py-16 bg-white`}
       >
         <Gallery />
-      </div>
+      </section>
 
-      {/* PRICING SECTION */}
-      <div
+      {/* PRICING */}
+      <section
         ref={pricingRef}
         data-section="pricing"
-        className={`transition-all duration-1000 delay-700 ${
-          visibleSections.pricing ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        } transform mt-20`}
+        className={`transition-opacity duration-1000 ${
+          visible.pricing ? "opacity-100" : "opacity-0"
+        } py-20 px-6 bg-gray-100`}
       >
-
-        <button
-          onClick={() => setShowPricing(!showPricing)}
-          className="bg-gray-800 text-white px-4 py-2 rounded-md mb-6 hover:bg-gray-700 transition"
-        >
-          {showPricing ? "Hide Pricing" : "Show Pricing"}
-        </button>
-
-        {showPricing && (
-          <div className="overflow-x-auto px-4">
-            <table className="min-w-full text-sm text-left border border-gray-300 shadow-lg rounded-lg overflow-hidden bg-white">
-              <thead className="bg-green-600 text-white">
-                <tr>
-                  <th className="px-6 py-3">Service</th>
-                  <th className="px-6 py-3">Duration</th>
-                  <th className="px-6 py-3">Price</th>
-                </tr>
-              </thead>
-              <tbody className="text-gray-700">
-                {[
-                  ["Haircut", "30 mins", "$65"],
-                  ["Hair Coloring", "1 hour", "$60"],
-                  ["Beard Trim", "15 mins", "$25"],
-                  ["Full Styling", "1.5 hours", "$100"],
-                ].map(([service, duration, price], i) => (
-                  <tr
-                    key={i}
-                    className={`hover:bg-green-50 transition ${i % 2 === 0 ? "bg-gray-50" : "bg-white"}`}
-                  >
-                    <td className="px-6 py-3 font-medium">{service}</td>
-                    <td className="px-6 py-3">{duration}</td>
-                    <td className="px-6 py-3">{price}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-semibold text-center mb-10">Our Services</h2>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {pricingItems.map(({ title, duration, price }, i) => (
+              <div
+                key={i}
+                className="bg-white p-6 rounded-2xl shadow hover:shadow-md transition"
+              >
+                <h3 className="text-xl font-medium mb-2">{title}</h3>
+                <p className="text-sm text-gray-500">{duration}</p>
+                <p className="mt-4 text-lg font-semibold text-green-600">{price}</p>
+              </div>
+            ))}
           </div>
-        )}
-      </div>
+        </div>
+      </section>
     </div>
   );
 };

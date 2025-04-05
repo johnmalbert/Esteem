@@ -2,13 +2,19 @@ export default {
   content: ["./index.html", "./src/**/*.{ts,tsx}", "./public/**/*.{ts,tsx}"],
   theme: {
     extend: {
-      fontFamily: {
-        oswald: ['Roboto', 'sans-serif'], // 👈 add your custom font
-        // You can add more like:
-        // roboto: ['Roboto', 'sans-serif'],
-        // montserrat: ['Montserrat', 'sans-serif'],
+      colors: {
+        background: "#0f0f0f",
+        surface: "#1c1c1e",
+        accent: "#4ade80", // soft green
+        text: "#f1f1f1",
+        muted: "#a1a1aa",
       },
     },
+    fontFamily: {
+      sans: ['"Inter"', "sans-serif"],
+      serif: ['"Playfair Display"', "serif"],
+    },
   },
+  darkMode: 'class', // add if using Tailwind dark mode toggle   
   plugins: [],
 };
