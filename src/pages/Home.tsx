@@ -16,8 +16,10 @@ const Home = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const section = entry.target.dataset.section;
-            setVisible((prev) => ({ ...prev, [section]: true }));
+            const section = (entry.target as HTMLElement).dataset.section;
+            if (section) {
+              setVisible((prev) => ({ ...prev, [section]: true }));
+            }
           }
         });
       },
