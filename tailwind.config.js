@@ -3,7 +3,6 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#0f0f0f",
         surface: "#1c1c1e",
         accent: "#4ade80", // soft green
         text: "#f1f1f1",

@@ -2,15 +2,13 @@ const images = [
   "/images/haircut1.jpg",
   "/images/haircut2.jpg",
   "/images/haircut3.jpg",
-  "/images/haircut4.jpg",
   "/images/haircut5.jpg",
-  "/images/haircut6.jpg",
-  "/images/owner.jpg",
+  "/images/haircut6.jpg"
 ];
 
 const Gallery = () => {
   return (
-    <div className="px-4 py-12 bg-background text-text">
+    <div className="px-4 py-12 text-text">
       <h2 className="text-3xl font-serif text-center mb-10">Gallery</h2>
       <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
         {images.map((src, idx) => (
