@@ -42,7 +42,7 @@ const Home = () => {
           alt="Esteem Logo"
           className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg animate-fade-in"
         />
-        <h1 className="text-4xl sm:text-5xl font-serif text-gray-900 mt-6 leading-tight">
+        <h1 className="text-4xl sm:text-5xl font-serif mt-6 leading-tight">
           Precision. Ritual. Esteem.
         </h1>
         <a
