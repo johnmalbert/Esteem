@@ -47,7 +47,7 @@ const Home = () => {
         </h1>
         <a
           href="https://square.site/book/1NCFYYAC5EK9Y/ross-henry-seattle-wa"
-          className="inline-block mt-6 bg-black text-white px-6 py-3 rounded-full shadow-lg hover:bg-gray-800 transition"
+          className="inline-block mt-6 bg-[#2A65AB] text-white px-6 py-3 rounded-full shadow-lg hover:bg-gray-800 transition"
         >
           Book Your Experience
         </a>

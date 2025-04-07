@@ -16,7 +16,7 @@ const Footer = () => {
         <p className="mt-1">1201 Dexter Ave., Seattle, WA 98109</p>
         <a
           href="https://square.site/book/1NCFYYAC5EK9Y/ross-henry-seattle-wa"
-          className="bg-blue-500 text-white px-4 py-2 rounded-md inline-block mt-2 hover:bg-blue-600"
+          className="bg-[#2A65AB] text-white px-4 py-2 rounded-md inline-block mt-2 hover:bg-blue-600"
         >
           Book Now
         </a>
