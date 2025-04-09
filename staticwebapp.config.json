@@ -2,9 +2,6 @@
   "routes": [
     {
       "route": "/",
-      "methods": [
-        "get"
-      ],
       "redirect": "https://www.esteemseattle.com",
       "statusCode": 301
     }
