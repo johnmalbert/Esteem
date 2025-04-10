@@ -24,8 +24,8 @@ const Footer = () => {
 
       <div className="mt-6">
         <iframe
-          title="Ross Henry Location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.9020964344815!2d-122.34229192328298!3d47.62968477119688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490154cc34b0dc1%3A0x9bc786c70c4c4f71!2s1201%20Dexter%20Ave%20N%2C%20Seattle%2C%20WA%2098109%2C%20USA!5e0!3m2!1sen!2sus!4v1712352600555!5m2!1sen!2sus"
+          title="Esteem Seattle"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2687.681685410202!2d-122.35100820000001!3d47.6517522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54901500aac92b1f%3A0x66584f1d27d37534!2s600%20N%2036th%20St%20Suite%20209%2C%20Seattle%2C%20WA%2098103!5e0!3m2!1sen!2sus!4v1744322596834!5m2!1sen!2sus"
           width="100%"
           height="250"
           className="rounded-md border-0 w-full max-w-2xl mx-auto"
