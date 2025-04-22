@@ -5,7 +5,7 @@ const Footer = () => {
         <p>
           Follow us on{" "}
           <a
-            href="https://www.instagram.com/rosshenryhair/"
+            href="https://www.instagram.com/studioesteem.sea/"
             className="underline text-blue-300 hover:text-blue-400"
             target="_blank"
             rel="noopener noreferrer"
