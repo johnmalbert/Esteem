@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@microsoft/applicationinsights-web": "^3.3.9",
     "esteem": "file:",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
