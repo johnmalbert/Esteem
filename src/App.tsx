@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 const App = () => {
   return (
     <Router>
-      <div className="pt-16">
+      <div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/book" element={<Book />} />

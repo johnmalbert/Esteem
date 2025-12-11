@@ -12,6 +12,7 @@ export default {
     fontFamily: {
       sans: ['"Inter"', "sans-serif"],
       serif: ['"Playfair Display"', "serif"],
+      roboto: ['"Roboto"', "sans-serif"],
     },
   },
   darkMode: 'class', // add if using Tailwind dark mode toggle   

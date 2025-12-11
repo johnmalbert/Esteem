@@ -9,7 +9,6 @@ const images = [
 const Gallery = () => {
   return (
     <div className="px-4 py-12 text-text">
-      <h2 className="text-3xl font-serif text-center mb-10">Gallery</h2>
       <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
         {images.map((src, idx) => (
           <div
