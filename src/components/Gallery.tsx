@@ -3,7 +3,8 @@ const images = [
   "/images/haircut2.jpg",
   "/images/haircut3.jpg",
   "/images/haircut5.jpg",
-  "/images/haircut6.jpg"
+  "/images/haircut6.jpg",
+  "/images/unnamed.jpg",
 ];
 
 const Gallery = () => {
