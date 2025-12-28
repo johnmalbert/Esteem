@@ -9,7 +9,7 @@ const images = [
 const Gallery = () => {
   return (
     <div className="px-4 py-12 text-text">
-      <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {images.map((src, idx) => (
           <div
             key={idx}
@@ -18,7 +18,7 @@ const Gallery = () => {
             <img
               src={src}
               alt={`Haircut ${idx + 1}`}
-              className="w-full h-auto object-cover brightness-90 hover:brightness-100 transition duration-300"
+              className="w-full h-[325px] object-cover brightness-90 hover:brightness-100 transition duration-300"
             />
           </div>
         ))}

@@ -25,7 +25,7 @@ const Home = () => {
           }
         });
       },
-      { threshold: 0.25 }
+      { threshold: 0.1 }
     );
 
     [introRef, galleryRef, whatToExpectRef, testimonialsRef].forEach((ref) => {
@@ -108,7 +108,7 @@ const Home = () => {
       <section
         ref={whatToExpectRef}
         data-section="whatToExpect"
-        className={`transition-transform duration-1000 ${
+        className={`transition-transform duration-700 ${
           visible.whatToExpect ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
         } transform py-16 bg-[#FFFDEE]`}
       >
@@ -130,7 +130,7 @@ const Home = () => {
               <img 
                 src="/images/Ross2-62.jpg" 
                 alt="Warm welcoming atmosphere"
-                className="w-full h-[230px] object-cover"
+                className="w-full h-[325px] object-cover"
               />
               <div className="p-6">
                 <h4 className="font-roboto font-bold text-lg mb-2 text-[#2A65AB]">Personalization</h4>
@@ -141,7 +141,7 @@ const Home = () => {
               <img 
                 src="/images/Ross-3.jpg" 
                 alt="One-chair shop"
-                className="w-full h-[202px] object-cover"
+                className="w-full h-[325px] object-cover"
               />
               <div className="p-6">
                 <h4 className="font-roboto font-bold text-lg mb-2 text-[#2A65AB]">One-Chair Shop</h4>
@@ -152,7 +152,7 @@ const Home = () => {
               <img 
                 src="/images/Ross-4.jpg" 
                 alt="Personalized service"
-                className="w-full h-auto"
+                className="w-full h-[325px] object-cover"
               />
               <div className="p-6">
                 <h4 className="font-roboto font-bold text-lg mb-2 text-[#2A65AB]">Appointment Only</h4>
@@ -163,7 +163,7 @@ const Home = () => {
               <img 
                 src="/images/Ross-65.jpg" 
                 alt="Leave feeling confident"
-                className="w-full h-auto"
+                className="w-full h-[325px] object-cover"
               />
               <div className="p-6">
                 <h4 className="font-roboto font-bold text-lg mb-2 text-[#2A65AB]">Leave Feeling Esteem</h4>
