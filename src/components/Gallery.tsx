@@ -1,9 +1,13 @@
 const images = [
-  "/images/haircut1.jpg",
-  "/images/haircut2.jpg",
-  "/images/haircut3.jpg",
+  "/images/haircut8.jpg",
+  "/images/haircut7.jpg",
+  "/images/haircut10.jpg",
+  "/images/haircut9.jpg",
   "/images/haircut5.jpg",
-  "/images/haircut6.jpg"
+  "/images/haircut6.jpg",
+  "/images/haircut3.jpg",
+  "/images/haircut1.jpg",
+  "/images/haircut11.jpg"
 ];
 
 const Gallery = () => {
